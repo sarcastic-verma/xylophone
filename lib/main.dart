@@ -9,6 +9,17 @@ class MyApp extends StatelessWidget {
     player.play("note$no.wav");
   }
 
+  Expanded button(Color color, int soundnumber) {
+    return Expanded(
+      child: FlatButton(
+        onPressed: () {
+          playSound(soundnumber);
+        },
+        color: color,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,50 +29,14 @@ class MyApp extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
-            //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              FlatButton(
-                onPressed: () {
-                  playSound(1);
-                },
-                color: Colors.red,
-              ),
-              FlatButton(
-                onPressed: () {
-                  playSound(2);
-                },
-                color: Colors.orange,
-              ),
-              FlatButton(
-                onPressed: () {
-                  playSound(3);
-                },
-                color: Colors.yellow,
-              ),
-              FlatButton(
-                onPressed: () {
-                  playSound(4);
-                },
-                color: Colors.green,
-              ),
-              FlatButton(
-                onPressed: () {
-                  playSound(5);
-                },
-                color: Colors.blue,
-              ),
-              FlatButton(
-                onPressed: () {
-                  playSound(6);
-                },
-                color: Colors.purple,
-              ),
-              FlatButton(
-                onPressed: () {
-                  playSound(7);
-                },
-                color: Colors.pink,
-              )
+              button(Colors.red, 1),
+              button(Colors.orange, 2),
+              button(Colors.pink, 3),
+              button(Colors.yellow, 4),
+              button(Colors.green, 5),
+              button(Colors.blue, 6),
+              button(Colors.purple, 7)
             ],
           ),
         ),
