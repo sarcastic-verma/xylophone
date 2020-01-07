@@ -1,4 +1,5 @@
 import 'package:audioplayers/audio_cache.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -15,6 +16,14 @@ class MyApp extends StatelessWidget {
         onPressed: () {
           playSound(soundnumber);
         },
+        child: Text(
+          "Note $soundnumber",
+          style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontSize: 20.0,
+              fontStyle: FontStyle.italic),
+        ),
         color: color,
       ),
     );
